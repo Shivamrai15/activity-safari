@@ -23,7 +23,9 @@ func main() {
 
 	router.GET("/api/v2/health", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{
-			"message": "success",
+			"status": "healthy",
+			"service": "User Activity Service",
+			"version": "1.0.0",
 		})
 	})
 
