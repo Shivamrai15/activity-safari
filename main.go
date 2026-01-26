@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/Shivamrai15/rs-safari/routes"
-	"github.com/Shivamrai15/rs-safari/utils"
+	"github.com/Shivamrai15/activity-safari/routes"
+	"github.com/Shivamrai15/activity-safari/utils"
 	"github.com/gin-gonic/gin"
 )
 

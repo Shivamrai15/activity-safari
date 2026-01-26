@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Shivamrai15/rs-safari/models"
-	"github.com/Shivamrai15/rs-safari/utils"
+	"github.com/Shivamrai15/activity-safari/models"
+	"github.com/Shivamrai15/activity-safari/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"github.com/google/uuid"

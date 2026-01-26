@@ -1,4 +1,4 @@
-module github.com/Shivamrai15/rs-safari
+module github.com/Shivamrai15/activity-safari
 
 go 1.25.5
 

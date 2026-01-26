@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"github.com/Shivamrai15/rs-safari/controllers"
-	"github.com/Shivamrai15/rs-safari/middlewares"
+	"github.com/Shivamrai15/activity-safari/controllers"
+	"github.com/Shivamrai15/activity-safari/middlewares"
 	"github.com/gin-gonic/gin"
 )
 

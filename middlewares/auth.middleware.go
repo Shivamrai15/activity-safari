@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/Shivamrai15/rs-safari/models"
-	"github.com/Shivamrai15/rs-safari/utils"
+	"github.com/Shivamrai15/activity-safari/models"
+	"github.com/Shivamrai15/activity-safari/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 )
@@ -24,7 +24,7 @@ func AuthMiddleware() gin.HandlerFunc {
 
 		tokenString := strings.TrimPrefix(authHeader, "Bearer ")
 		jwtSecret := []byte(utils.GetConfigValue("JWT_ACCESS_SECRET"))
-		
+
 		token, err := jwt.ParseWithClaims(tokenString, &models.TokenPayload{}, func(token *jwt.Token) (interface{}, error) {
 			return jwtSecret, nil
 		}, jwt.WithValidMethods([]string{"HS256"}))
@@ -36,7 +36,7 @@ func AuthMiddleware() gin.HandlerFunc {
 			c.Abort()
 			return
 		}
-		
+
 		c.Set("user", token.Claims.(*models.TokenPayload))
 		c.Next()
 	}
