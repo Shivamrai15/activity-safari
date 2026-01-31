@@ -58,7 +58,7 @@ $RECYCLE.BIN/
 logs/
 
 # Database files
-*.db
+# *.db
 *.sqlite
 *.sqlite3
 

@@ -26,10 +26,14 @@ func InitConfig() {
 	}
 
 	Config = make(map[string]string)
+
 	Config["PORT"] = GetEnvValue("PORT", "3000", false)
+
 	Config["JWT_ACCESS_SECRET"] = GetEnvValue("JWT_ACCESS_SECRET", "", true)
-	Config["TURSO_DB_URL"] = GetEnvValue("TURSO_DB_URL", "", true)
-	Config["TURSO_TOKEN"] = GetEnvValue("TURSO_TOKEN", "", true)
+	Config["JWT_REFRESH_SECRET"] = GetEnvValue("JWT_REFRESH_SECRET", "", true)
+	
+	Config["REDIS_URL"] = GetEnvValue("REDIS_URL", "", true)
+	Config["REDIS_PASSWORD"] = GetEnvValue("REDIS_PASSWORD", "", true)
 
 }
 

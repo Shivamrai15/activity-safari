@@ -26,6 +26,7 @@ func main() {
 		})
 	})
 
+	routes.RegisterTokenRoutes(router)
 	routes.RegisterSearchRoutes(router)
 
 	router.Run(":" + port)
