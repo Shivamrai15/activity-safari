@@ -38,7 +38,7 @@ func GetRecentSearches() gin.HandlerFunc {
 			return
 		}
 
-		rows, err := utils.GetDB().Query(
+		rows, err := utils.GetDb().Query(
 			`SELECT id, name, image, content_id, type, created_at 
 			 FROM SearchHistory 
 			 WHERE user_id = ?
@@ -113,7 +113,7 @@ func DeleteSearchEntry() gin.HandlerFunc {
 			return
 		}
 
-		result, err := utils.GetDB().Exec(
+		result, err := utils.GetDb().Exec(
 			`DELETE FROM SearchHistory WHERE id = ? AND user_id = ?`,
 			id, token.UserID,
 		)
@@ -186,7 +186,7 @@ func AddSearchEntry() gin.HandlerFunc {
 
 		id := uuid.New().String()
 
-		_, err := utils.GetDB().Exec(
+		_, err := utils.GetDb().Exec(
 			`INSERT INTO SearchHistory (id, name, image, content_id, type, user_id) 
 			 VALUES (?, ?, ?, ?, ?, ?)`,
 			id, req.Name, req.Image, req.ContentId, req.Type, token.UserID,

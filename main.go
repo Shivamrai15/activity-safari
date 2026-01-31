@@ -9,12 +9,11 @@ import (
 func main() {
 
 	utils.InitConfig()
+	utils.InitDb()
+
+	// setting up the router
 
 	port := utils.GetConfigValue("PORT")
-	if err := utils.InitLibSql(); err != nil {
-		panic("Failed to initialize database: " + err.Error())
-	}
-
 	router := gin.Default()
 
 	// defining middlewares
@@ -23,7 +22,7 @@ func main() {
 
 	router.GET("/api/v2/health", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{
-			"status": "healthy",
+			"status":  "healthy",
 			"service": "User Activity Service",
 			"version": "1.0.0",
 		})
