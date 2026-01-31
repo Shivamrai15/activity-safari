@@ -11,8 +11,6 @@ func main() {
 	utils.InitConfig()
 	utils.InitDb()
 
-	// setting up the router
-
 	port := utils.GetConfigValue("PORT")
 	router := gin.Default()
 
