@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	AccessTokenTTL  = 24 * time.Minute
+	AccessTokenTTL  = 24 * time.Hour
 	RefreshTokenTTL = 30 * 24 * time.Hour
 
 	ErrInvalidToken       = errors.New("invalid or expired refresh token")
