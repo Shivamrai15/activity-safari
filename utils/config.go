@@ -31,9 +31,12 @@ func InitConfig() {
 
 	Config["JWT_ACCESS_SECRET"] = GetEnvValue("JWT_ACCESS_SECRET", "", true)
 	Config["JWT_REFRESH_SECRET"] = GetEnvValue("JWT_REFRESH_SECRET", "", true)
-	
+
 	Config["REDIS_URL"] = GetEnvValue("REDIS_URL", "", true)
 	Config["REDIS_PASSWORD"] = GetEnvValue("REDIS_PASSWORD", "", true)
+
+	Config["MONGO_URI"] = GetEnvValue("MONGO_URI", "mongodb://localhost:27017", false)
+	Config["MONGO_DATABASE"] = GetEnvValue("MONGO_DATABASE", "testdb", false)
 
 }
 

@@ -139,7 +139,6 @@ func (t *TokenRotator) Rotate(
 	}, nil
 }
 
-
 func (t *TokenRotator) Revoke(ctx context.Context, accessToken string) error {
 	parsed, err := jwt.Parse(accessToken, func(token *jwt.Token) (any, error) {
 		return t.AccessTokenSecret, nil

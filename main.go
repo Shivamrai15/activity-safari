@@ -10,7 +10,8 @@ func main() {
 
 	utils.InitConfig()
 	utils.InitDb()
-
+	utils.InitMongo()
+	
 	port := utils.GetConfigValue("PORT")
 	router := gin.Default()
 
